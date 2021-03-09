@@ -18,6 +18,7 @@ fig.set_size_inches(8, 8)
 interval = 0.1
 tick_len = 0.015
 
+#%% generate two datasets
 np.random.seed(33)
 
 data1 = np.concatenate((np.random.rand(100, 1), np.random.rand(100, 1)/8, np.random.rand(100, 1)/16), axis = 1)
@@ -30,12 +31,6 @@ data2 = data2/np.sum(data2, axis = 1)[:, None]
 tp.set_boundary(ax = ax)
 tp.set_gridlines(ax = ax, interval = interval)
 tp.set_axis_status(ax, status = "off")
-#tp.set_axis_ticks_BRL(ax, tick_rotation = 0, tick_interval = interval, tick_length = tick_len)
-#tp.set_ticks_label_BRL(ax, label_rotation = 0, tick_interval = interval, offdis = 2.5*tick_len)
-#
-#tp.set_left_corner_label(ax, label = "1", offdis = 5*tick_len, rotation = 0)
-#tp.set_right_corner_label(ax, label = "2", offdis = 5*tick_len, rotation = 0)
-#tp.set_top_corner_label(ax, label = "3", offdis = 5*tick_len, rotation = 0)
 
 # set ticks adn tick labels for bottom and left axis
 tp.set_axis_ticks_BL(ax, tick_rotation = 0, tick_interval = interval, tick_length = tick_len)
@@ -54,7 +49,7 @@ b1, = tp.plot(data2, ax, color = "r")
 #tp.legend(ax)
 tp.legend(ax, (a1, b1), ("data 1", "data 2"), lg_kwargs = {"fontsize": 16, "bbox_to_anchor": (0.5, 0.5, 0.5, 0.5)})
 
-#%%
+#%% zoom in for interested region in above plotted diagram.
 
 tp = TernaryPlot(scale = 1)
 fig, ax = plt.subplots()
@@ -80,10 +75,11 @@ tp.set_zoomin_ticks_label_bilateral(axis_range = axisrange, ax=ax,  startpoint =
 
 tp.set_bottom_axis_label(ax, label = "mole percent of A", offdis = 0.05, rotation = 0)
 tp.set_left_axis_label(ax, label = "mole percent of B", offdis = 0.05, rotation = 0)
-#axisrange = [[0.5, 0, 0.5], [0, 0.5, 0.5], [0, 0, 1]]
-#axisrange =  np.array([[1, 0, 0], [0, 0.5, 0.5], [0, 0, 1]])
-#axisrange = [[0.4, 0, 0.6], [0, 0.6, 0.4], [0, 0, 1]]
-#
+
+## Magnify different corners examples
+#tp = TernaryPlot(scale = 1)
+#fig, ax = plt.subplots()
+#fig.set_size_inches(8, 8)
 #st = "top"
 #axisrange = [[0.6, 0, 0.4], [0, 0.4, 0.6], [0, 0, 1]] # top
 #data0 = axisrange + [[0.3, 0.1, 0.6]]
