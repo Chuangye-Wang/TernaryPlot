@@ -29,7 +29,7 @@ class TernaryPlot(object):
         return self.scale
  
     
-    def set_boundary(self, ax = None, plt_kwargs = {}):
+    def set_boundary(self, ax = None, **plt_kwargs):
         """ Plotting boundary lines for ternary diagram
         
         ax: ax canvas 
@@ -41,16 +41,16 @@ class TernaryPlot(object):
         if ax == None:
             fig, ax = plt.subplots()
         if "color" not in plt_kwargs.keys():
-            plt_kwargs["color"] = "r"
+            plt_kwargs["color"] = "k"
         if "linewidth" not in plt_kwargs.keys():
             plt_kwargs["linewidth"] = 2
         
         boundary_points3 = np.array([[1,0,0], [0,1,0], [0,0,1], [1,0,0]]) * self.get_scale()
         boundary_points2 = self.coordinates_conversion(boundary_points3)
-        ax.plot(boundary_points2[:, 0], boundary_points2[:, 1], **plt_kwargs)
+        ax.plot(boundary_points2[:, 0], boundary_points2[:, 1], label = None, **plt_kwargs)
     
     
-    def zoomin_plot(self, data, axis_range = [], ax = None, color = "r", marker = ".", linewidth = 0, plt_kwargs={}):
+    def zoomin_plot(self, data, axis_range = [], ax = None, **plt_kwargs):
         """ To transform axis range to [(1,0,0), (0,1,0), (0,0,1)] triangle.
         
         data: n x 3 dimensional list or array
@@ -92,10 +92,10 @@ class TernaryPlot(object):
             data_zoomin[i] = np.dot(np.dot(A, B), (data_conv[i] - datapoints11)) + datapoints01
         
     #    data_zoomin = data_zoomin.T
-        return ax.plot(data_zoomin[:, 0], data_zoomin[:, 1], color = color, marker = marker, linewidth = linewidth, **plt_kwargs)
+        return ax.plot(data_zoomin[:, 0], data_zoomin[:, 1], **plt_kwargs)
     
     
-    def set_gridlines(self, ax = None, interval = 0.1, plt_kwargs = {}):
+    def set_gridlines(self, ax = None, interval = 0.1, **plt_kwargs):
         """ Plotting gridlines in ternary diagram
         
         ax: matplotlib.axes._subplots.AxesSubplot
@@ -110,8 +110,12 @@ class TernaryPlot(object):
             fig.set_size_inches(8, 8)
         
         if "linewidth" not in plt_kwargs.keys():
-            plt_kwargs["linewidth"] = 1.25
-        
+            plt_kwargs["linewidth"] = 0.5
+        if "color" not in plt_kwargs.keys():
+            plt_kwargs["color"] = "k"
+        if "linestyle" not in plt_kwargs.keys():
+            plt_kwargs["linestyle"] = "--"
+            
         lines_number = int(self.get_scale()/interval)
         lines_list = [i for i in range(1, lines_number)]
         line1 = np.array([[i*interval, self.get_scale() - i*interval, 0] for i in lines_list])
@@ -127,7 +131,7 @@ class TernaryPlot(object):
         lines_all = np.concatenate([line12_c, line23_c, line31_c], axis = 0)
     
         for i in range(0, len(lines_all)):
-            ax.plot(lines_all[i][0::2], lines_all[i][1::2], color = "k", linestyle = "--", **plt_kwargs)
+            ax.plot(lines_all[i][0::2], lines_all[i][1::2], label = "", **plt_kwargs)
         
     
     def coordinates_conversion(self, x):
@@ -165,7 +169,7 @@ class TernaryPlot(object):
         ax.axis(status)
     
     
-    def set_axis_ticks_BL(self, ax = None, tick_rotation = 0, tick_interval = 0.1, tick_length = 0.015, plt_kwargs = {}):
+    def set_axis_ticks_BL(self, ax = None, tick_rotation = 0, tick_interval = 0.1, tick_length = 0.015, **plt_kwargs):
         """ Plotting ticks in left and bottom axis in ternary diagram, assume tickers are uniform distributed in axis
         
         ax: matplotlib.axes._subplots.AxesSubplot
@@ -184,6 +188,8 @@ class TernaryPlot(object):
             fig, ax = plt.subplots()
             fig.set_size_inches(8, 8)
         
+        if "linewidth" not in plt_kwargs.keys():
+            plt_kwargs["linewidth"] = 1
         if "color" not in plt_kwargs.keys():
             plt_kwargs["color"] = "k"
         
@@ -206,12 +212,12 @@ class TernaryPlot(object):
         tick_pos_leftstop = [[tick_pos_leftstart[j][0] + tick_xy_left[0], tick_pos_leftstart[j][1] + tick_xy_left[1]] for j in range(interval_num)]
         
         for j in range(interval_num):
-            ax.plot([tick_pos_bottomstart[j][0], tick_pos_bottomstop[j][0]], [tick_pos_bottomstart[j][1], tick_pos_bottomstop[j][1]], **plt_kwargs)
+            ax.plot([tick_pos_bottomstart[j][0], tick_pos_bottomstop[j][0]], [tick_pos_bottomstart[j][1], tick_pos_bottomstop[j][1]], label = "", **plt_kwargs)
 #            ax.plot([tick_pos_rightstart[j][0], tick_pos_rightstop[j][0]], [tick_pos_rightstart[j][1], tick_pos_rightstop[j][1]], color = "k")
-            ax.plot([tick_pos_leftstart[j][0], tick_pos_leftstop[j][0]], [tick_pos_leftstart[j][1], tick_pos_leftstop[j][1]], **plt_kwargs)
+            ax.plot([tick_pos_leftstart[j][0], tick_pos_leftstop[j][0]], [tick_pos_leftstart[j][1], tick_pos_leftstop[j][1]], label = "", **plt_kwargs)
     
     
-    def set_axis_ticks_BRL(self, ax = None, tick_rotation = 0, tick_interval = 0.1, tick_length = 0.015, plt_kwargs = {}):
+    def set_axis_ticks_BRL(self, ax = None, tick_rotation = 0, tick_interval = 0.1, tick_length = 0.015, **plt_kwargs):
         """ Plotting ticks in three axis in ternary diagram, assume tickers are uniform distributed in axis
         
         ax: matplotlib.axes._subplots.AxesSubplot
@@ -230,6 +236,8 @@ class TernaryPlot(object):
             fig, ax = plt.subplots()
             fig.set_size_inches(8, 8)
         
+        if "linewidth" not in plt_kwargs.keys():
+            plt_kwargs["linewidth"] = 1
         if "color" not in plt_kwargs.keys():
             plt_kwargs["color"] = "k"
         
@@ -255,12 +263,12 @@ class TernaryPlot(object):
 #        tick_pos_stopall = tick_pos_bottomstop + tick_pos_rightstop + tick_pos_leftstop
         
         for j in range(interval_num):
-            ax.plot([tick_pos_bottomstart[j][0], tick_pos_bottomstop[j][0]], [tick_pos_bottomstart[j][1], tick_pos_bottomstop[j][1]], **plt_kwargs)
-            ax.plot([tick_pos_rightstart[j][0], tick_pos_rightstop[j][0]], [tick_pos_rightstart[j][1], tick_pos_rightstop[j][1]], **plt_kwargs)
-            ax.plot([tick_pos_leftstart[j][0], tick_pos_leftstop[j][0]], [tick_pos_leftstart[j][1], tick_pos_leftstop[j][1]], **plt_kwargs)
+            ax.plot([tick_pos_bottomstart[j][0], tick_pos_bottomstop[j][0]], [tick_pos_bottomstart[j][1], tick_pos_bottomstop[j][1]], label = "", **plt_kwargs)
+            ax.plot([tick_pos_rightstart[j][0], tick_pos_rightstop[j][0]], [tick_pos_rightstart[j][1], tick_pos_rightstop[j][1]], label = "", **plt_kwargs)
+            ax.plot([tick_pos_leftstart[j][0], tick_pos_leftstop[j][0]], [tick_pos_leftstart[j][1], tick_pos_leftstop[j][1]], label = "", **plt_kwargs)
 
 
-    def set_ticks_label_BL(self, ax = None, label_rotation = 0, tick_interval = 0.1, offdis = 0.03, fontsize = 10, txt_kwargs = {}):
+    def set_ticks_label_BL(self, ax = None, label_rotation = 0, tick_interval = 0.1, offdis = 0.05, fontsize = 14, txt_kwargs = {}):
         """ add ticks labels in left and bottom axis in ternary diagram, assume tickers are uniform distributed in axis
         
         ax: matplotlib.axes._subplots.AxesSubplot
@@ -322,7 +330,7 @@ class TernaryPlot(object):
                  verticalalignment='center', rotation = label_left_rotation, fontsize = fontsize, **txt_kwargs)
 
     
-    def set_ticks_label_BRL(self, ax = None, label_rotation = 0, tick_interval = 0.1, offdis = 0.03, fontsize = 10, txt_kwargs = {}):
+    def set_ticks_label_BRL(self, ax = None, label_rotation = 0, tick_interval = 0.1, offdis = 0.05, fontsize = 14, txt_kwargs = {}):
         """ add ticks labels in three corners in ternary diagram, assume tickers are uniform distributed in axis
         
         ax: matplotlib.axes._subplots.AxesSubplot
@@ -439,7 +447,7 @@ class TernaryPlot(object):
         else:
             raise ValueError("startpoint is not in ['top', 'left', 'right']")
     
-    def set_zoomin_ticks_label_bilateral(self, axis_range = [], ax = None, startpoint = "left", label_rotation = 0, tick_interval = 0.1, offdis = 0.03, fontsize = 10, txt_kwargs = {}):
+    def set_zoomin_ticks_label_bilateral(self, axis_range = [], ax = None, startpoint = "left", label_rotation = 0, tick_interval = 0.1, offdis = 0.05, fontsize = 10, txt_kwargs = {}):
         """ add ticks labels in two axes in zoomin ternary diagram, assume tickers are uniform distributed in axis
         
         ax: matplotlib.axes._subplots.AxesSubplot
@@ -590,7 +598,7 @@ class TernaryPlot(object):
         if "fontsize" not in txt_kwargs.keys():
             txt_kwargs["fontsize"] = 16
         
-        x, y = [-offdis*self.scale, 0]
+        x, y = [-offdis*self.scale, -1/3*offdis*self.scale]
         ax.text(x, y, label, horizontalalignment='center',
                  verticalalignment='center', rotation = rotation, **txt_kwargs)
         
@@ -612,7 +620,7 @@ class TernaryPlot(object):
         if "fontsize" not in txt_kwargs.keys():
             txt_kwargs["fontsize"] = 16
         
-        x, y = [self.scale + offdis*self.scale, 0]
+        x, y = [self.scale + offdis*self.scale, -1/3*offdis*self.scale]
         ax.text(x, y, label, horizontalalignment='center',
                  verticalalignment='center', rotation = rotation, **txt_kwargs)
     
@@ -707,7 +715,7 @@ class TernaryPlot(object):
                  verticalalignment='center', rotation = rotation + 60, **txt_kwargs)
         
 
-    def plot(self, x, ax = None, color = "b", marker = ".", linewidth = 0, label = "", plt_kwargs = {}):
+    def plot(self, x, ax = None, **plt_kwargs):
         """ Plotting 3d data in 2d ternary plot
         
         x: (n x 3) dimensional array or list
@@ -723,13 +731,15 @@ class TernaryPlot(object):
             fig.set_size_inches(8, 8)
     
         x_conv = self.coordinates_conversion(x)
+#        ax.set_xlim([-0.1 * self.scale, 1.1 * self.scale])
+#        ax.set_ylim([-0.1 * 2 / np.sqrt(3) *self.scale, 1.1 * 2 / np.sqrt(3) * self.scale])
     #    print(data_conv)
 #        if not label:
 #            plt_kwargs["label"] = label
-        return ax.plot(x_conv[:, 0], x_conv[:, 1], color = color, marker = marker, linewidth = 0, label = label, **plt_kwargs)
+        return ax.plot(x_conv[:, 0], x_conv[:, 1], **plt_kwargs)
     
     
-    def legend(self, ax = None, handles = [], labels = [], lg_kwargs = {}):
+    def show_legend(self, ax = None, **lg_kwargs):
         """ Add legend to plots
         
         ax: matplotlib.axes._subplots.AxesSubplot
@@ -741,8 +751,4 @@ class TernaryPlot(object):
         if ax == None:
             fig, ax = plt.subplots()
             fig.set_size_inches(8, 8)
-        if not labels:
-            ax.legend(**lg_kwargs)
-        else:
-            ax.legend(handles = handles, labels = labels, **lg_kwargs)
-
+        ax.legend(**lg_kwargs)
