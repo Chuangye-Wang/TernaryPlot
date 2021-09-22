@@ -11,6 +11,9 @@
 
 (3). For the theories behind mapping a arbitrary triangle to an equilateral triangle, one could refer to this discussion in stackexchange https://math.stackexchange.com/questions/541926/converting-triangles-to-isosceles-equilateral-or-right
 
+(4). Quickly plot phase boundaries data with tielines_plot in plots.py.
+
+
 # EDS mapping
 (1). Heatmapping with a random array of size 100x100.
 <p align="center">
