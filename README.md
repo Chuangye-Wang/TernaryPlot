@@ -31,14 +31,20 @@ mode = 2: Plot the phases in different markers and the literature in different c
 </p>
 
 (2). Heatmapping of Nb element in Fe-Nb-Ni triple area. Select two points in the heatmap and plot the composition versus distance profiles.
-
 <p align="center">
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_heatmap.png" width="600" alt="Phase Diagram">
 </p>
 <p float="left">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Fe_comp_dis.png" width="350">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_comp_dis.png" width="350">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Ni_comp_dis.png" width="350">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Fe_comp_dis.png" width="300">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_comp_dis.png" width="300">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Ni_comp_dis.png" width="300">
 </p>
-# Gui usage
+# Tojson
+Transfer the data in the spreadsheet to the json file with required format for future thermodynamic assessment
 
+# Gui usage
+Integrate the load data, view data, plotting heatmap, extracting datapoints, save data into a gui.
+<p align="center">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/interface_view.jpg" width="600" alt="Phase Diagram">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/interface_workflow.jpg" width="600" alt="Phase Diagram">
+</p>
