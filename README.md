@@ -36,9 +36,9 @@ mode = 2: Plot the phases in different markers and the literature in different c
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_heatmap.png" width="600" alt="Phase Diagram">
 </p>
 <p float="left">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Fe_comp_dis.png" width="300">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_comp_dis.png" width="300">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Ni_comp_dis.png" width="300">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Fe_comp_dis.png" width="260">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_comp_dis.png" width="260">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Ni_comp_dis.png" width="260">
 </p>
 
 # Tojson
