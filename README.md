@@ -45,6 +45,6 @@ Transfer the data in the spreadsheet to the json file with required format for f
 # Gui usage
 Integrate the load data, view data, plotting heatmap, extracting datapoints, save data into a gui.
 <p align="center">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/interface_view.jpg" width="600" alt="Phase Diagram">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/interface_workflow.jpg" width="600" alt="Phase Diagram">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/interface_view.JPG" width="600" alt="Phase Diagram">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/interface_workflow.JPG" width="600" alt="Phase Diagram">
 </p>
