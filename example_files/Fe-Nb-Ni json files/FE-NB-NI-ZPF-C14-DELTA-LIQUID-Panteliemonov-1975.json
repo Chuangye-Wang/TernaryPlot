@@ -1,0 +1,25 @@
+{
+    "components": ["Fe", "Nb", "Ni"],
+    "phases": ["C14", "DELTA", "LIQUID"],
+    "broadcast_conditions": false,
+    "conditions": {
+        "T": [1563],
+        "P": [101325]
+    },
+    "output": "ZPF",
+    "values": [
+        [
+            ["LIQUID", ["Fe", "Nb"],
+                [0.167341898657158, 0.258960017714966]
+            ],
+            ["DELTA", ["Fe", "Nb"],
+                [0.0565493733741712, 0.244312243262236]
+            ],
+            ["C14", ["Fe", "Nb"],
+                [0.396284015774512, 0.283801105722291]
+            ]
+        ]
+    ],
+    "reference": "Panteliemonov-1975",
+    "comment": ""
+}
