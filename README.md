@@ -16,8 +16,10 @@
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/tie-line-figure.png" width="600" alt="Phase Diagram">
 </p>
 
-# EDS mapping
+# EDS data
 (1). Heatmapping with a random array of size 100x100.
 <p align="center">
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/EDS-figure.png" width="600" alt="Phase Diagram">
 </p>
+
+# Gui usage
