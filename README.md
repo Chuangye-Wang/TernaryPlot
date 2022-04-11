@@ -24,7 +24,8 @@ mode = 2: Plot the phases in different markers and the literature in different c
 <p align="center">
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/tie-line-figure_mode2.png" width="600" alt="Phase Diagram">
 </p>
-# EDS data, imagetools
+
+# EDS data and imagetools
 (1). Heatmapping with a random array of size 100x100.
 <p align="center">
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/EDS-figure.png" width="600" alt="Phase Diagram">
@@ -39,6 +40,7 @@ mode = 2: Plot the phases in different markers and the literature in different c
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_comp_dis.png" width="300">
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Ni_comp_dis.png" width="300">
 </p>
+
 # Tojson
 Transfer the data in the spreadsheet to the json file with required format for future thermodynamic assessment
 
