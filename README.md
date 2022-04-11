@@ -1,7 +1,7 @@
 # TernaryPlot
 (1). Plotting 3d data in 2d ternary diagram. The 3 components are denoted by A, B, C.
 <p align="center">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/examples_figure1.png" width="600" alt="Phase Diagram">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/examples_figure1.png" width="600" alt="Phase Diagram">
 </p>
 
 (2). Magnify the selected red triangle in (1) to an equilateral triangle.
