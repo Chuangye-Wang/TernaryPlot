@@ -12,8 +12,11 @@
 (3). For the theories behind mapping a arbitrary triangle to an equilateral triangle, one could refer to this discussion in stackexchange https://math.stackexchange.com/questions/541926/converting-triangles-to-isosceles-equilateral-or-right
 
 (4). Quickly plot phase boundaries data with tielines_plot in plots.py.
+
 There are two modes:
+
 mode = 1: In each literature, the tie-lines are plotted in the same color (does not show the phase information)
+
 mode = 2: Plot the phases in different marker and the literature in different colors
 <p align="center">
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/tie-line-figure_mode1.png" width="600" alt="Phase Diagram">
@@ -32,9 +35,9 @@ mode = 2: Plot the phases in different marker and the literature in different co
   <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_heatmap.png" width="600" alt="Phase Diagram">
 </p>
 <p float="left">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Fe_comp_dis.png" width="600" alt="Phase Diagram">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_comp_dis.png" width="600" alt="Phase Diagram">
-  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Ni_comp_dis.png" width="600" alt="Phase Diagram">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Fe_comp_dis.png" width="100">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Nb_comp_dis.png" width="100">
+  <img src="https://github.com/Chuangye-Wang/TernaryPlot/blob/main/example_figures/Ni_comp_dis.png" width="100">
 </p>
 # Gui usage
 
